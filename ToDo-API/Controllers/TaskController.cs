@@ -20,9 +20,6 @@ namespace ToDo_API.Controllers
             try
             {
                 var allTasks = await _context.Tasks.OrderByDescending(t => t.Id).ToListAsync();
-                if (allTasks.Count == 0)
-                    return NoContent();
-
                 return Ok(allTasks);
             }
             catch (Exception ex) 
@@ -56,7 +53,7 @@ namespace ToDo_API.Controllers
                 {
                     CreationDate = DateTime.Now,
                     Title = addTaskDTO.Title,
-                    Priority = addTaskDTO.Priority,
+                    IsImportant = addTaskDTO.IsImportant,
                     EndDate = addTaskDTO.EndDate,
                     IsCompleted = addTaskDTO.IsCompleted,
                 };
@@ -81,7 +78,7 @@ namespace ToDo_API.Controllers
 
                 task.CreationDate = DateTime.Now;
                 task.Title = editTaskDTO.Title;
-                task.Priority = editTaskDTO.Priority;
+                task.IsImportant = editTaskDTO.IsImportant;
                 task.EndDate = editTaskDTO.EndDate;
                 task.IsCompleted = editTaskDTO.IsCompleted;
 

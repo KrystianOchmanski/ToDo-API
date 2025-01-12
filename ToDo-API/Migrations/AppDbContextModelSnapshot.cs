@@ -39,8 +39,8 @@ namespace ToDo_API.Migrations
                     b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Priority")
-                        .HasColumnType("int");
+                    b.Property<bool>("IsImportant")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Title")
                         .IsRequired()

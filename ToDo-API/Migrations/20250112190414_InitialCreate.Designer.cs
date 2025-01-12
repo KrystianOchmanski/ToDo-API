@@ -12,7 +12,7 @@ using ToDo_API;
 namespace ToDo_API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250109130929_InitialCreate")]
+    [Migration("20250112190414_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -42,8 +42,8 @@ namespace ToDo_API.Migrations
                     b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Priority")
-                        .HasColumnType("int");
+                    b.Property<bool>("IsImportant")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Title")
                         .IsRequired()

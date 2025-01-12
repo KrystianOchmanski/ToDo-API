@@ -8,11 +8,10 @@ namespace ToDo_API.Model.DTOs.Task
         [Required(ErrorMessage = "Title is required.")]
         public string Title { get; set; } = null!;
 
-        [Range(1, 3, ErrorMessage = "Priority must be between 1 and 3.")]
-        public int Priority { get; set; } = 1;
-
         [FutureDate(ErrorMessage = "EndDate must be in the future.")]
         public DateTime? EndDate { get; set; }
+
+        public bool IsImportant { get; set; }
 
         public bool IsCompleted { get; set; } = false;
     }
