@@ -51,7 +51,6 @@ namespace ToDo_API.Controllers
             {
                 var newTask = new Model.Task
                 {
-                    CreationDate = DateTime.Now,
                     Title = addTaskDTO.Title,
                     IsImportant = addTaskDTO.IsImportant,
                     EndDate = addTaskDTO.EndDate,
@@ -76,7 +75,7 @@ namespace ToDo_API.Controllers
                 var task = await _context.Tasks.FindAsync(id);
                 if (task == null) return NotFound();
 
-                task.CreationDate = DateTime.Now;
+                task.CreationDate = DateOnly.FromDateTime(DateTime.Now);
                 task.Title = editTaskDTO.Title;
                 task.IsImportant = editTaskDTO.IsImportant;
                 task.EndDate = editTaskDTO.EndDate;

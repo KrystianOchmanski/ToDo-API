@@ -6,7 +6,7 @@
         public string Title { get; set; } = null!;
         public bool IsImportant {  get; set; }
         public bool IsCompleted { get; set; }
-        public DateTime CreationDate { get; set; }
-        public DateTime? EndDate { get; set; }
+        public DateOnly CreationDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
+        public DateOnly? EndDate { get; set; }
     }
 }

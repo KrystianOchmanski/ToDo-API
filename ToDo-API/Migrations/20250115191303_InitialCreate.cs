@@ -20,8 +20,8 @@ namespace ToDo_API.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsImportant = table.Column<bool>(type: "bit", nullable: false),
                     IsCompleted = table.Column<bool>(type: "bit", nullable: false),
-                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    CreationDate = table.Column<DateTime>(type: "date", nullable: false, defaultValueSql: "GETDATE()"),
+                    EndDate = table.Column<DateTime>(type: "date", nullable: true)
                 },
                 constraints: table =>
                 {

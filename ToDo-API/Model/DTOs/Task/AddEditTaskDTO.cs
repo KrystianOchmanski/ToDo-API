@@ -9,7 +9,7 @@ namespace ToDo_API.Model.DTOs.Task
         public string Title { get; set; } = null!;
 
         [FutureDate(ErrorMessage = "EndDate must be in the future.")]
-        public DateTime? EndDate { get; set; }
+        public DateOnly? EndDate { get; set; }
 
         public bool IsImportant { get; set; }
 
